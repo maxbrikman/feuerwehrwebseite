@@ -252,3 +252,225 @@ body.darkmode .media-container audio,
 body.darkmode .media-container video {
     box-shadow: 0 4px 2px rgba(255, 255, 255, 0.6);
 }
+
+.dev-team-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--secondary-bg-color, #f5f5f5);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dev-team-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-text-color, #333);
+}
+
+.dev-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dev-profile {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 15px;
+    background-color: var(--main-bg-color, #fff);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.dev-profile:hover {
+    transform: translateY(-5px);
+}
+
+.dev-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 3px solid var(--accent-color, #ff6b6b);
+}
+
+.dev-profile h4 {
+    margin: 0 0 5px;
+    color: var(--primary-text-color, #333);
+}
+
+.dev-role {
+    font-weight: bold;
+    color: var(--accent-color, #ff6b6b);
+    margin: 5px 0;
+}
+
+.dev-info {
+    font-size: 0.9em;
+    margin: 10px 0;
+    color: var(--secondary-text-color, #666);
+}
+
+.dev-social {
+    margin-top: 15px;
+}
+
+.dev-social a {
+    display: inline-block;
+    margin: 0 5px;
+    color: var(--primary-text-color, #333);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.dev-social a:hover {
+    color: var(--accent-color, #ff6b6b);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dev-profiles {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dev-profile {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* dark mode style footer# */
+
+/* Developer Team Section with Dark Mode Support */
+:root {
+    --accent-color: #ff6b6b;
+    --primary-text-color: #333;
+    --secondary-text-color: #666;
+    --main-bg-color: #fff;
+    --secondary-bg-color: #f5f5f5;
+    --card-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    --container-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.darkmode {
+    --accent-color: #ff8585;
+    --primary-text-color: #f4f4f9;
+    --secondary-text-color: #cccccc;
+    --main-bg-color: #2c2c2c;
+    --secondary-bg-color: #444444;
+    --card-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    --container-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+.dev-team-container {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 8px;
+    box-shadow: var(--container-shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dev-team-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-text-color);
+    transition: color 0.3s;
+}
+
+.dev-profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dev-profile {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    padding: 15px;
+    background-color: var(--main-bg-color);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s, box-shadow 0.3s;
+}
+
+.dev-profile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+body.darkmode .dev-profile:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.dev-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px;
+    border: 3px solid var(--accent-color);
+    transition: border-color 0.3s;
+}
+
+.dev-profile h4 {
+    margin: 0 0 5px;
+    color: var(--primary-text-color);
+    transition: color 0.3s;
+}
+
+.dev-role {
+    font-weight: bold;
+    color: var(--accent-color);
+    margin: 5px 0;
+    transition: color 0.3s;
+}
+
+.dev-info {
+    font-size: 0.9em;
+    margin: 10px 0;
+    color: var(--secondary-text-color);
+    transition: color 0.3s;
+}
+
+.dev-social {
+    margin-top: 15px;
+}
+
+.dev-social a {
+    display: inline-block;
+    margin: 0 5px;
+    color: var(--primary-text-color);
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.dev-social a:hover {
+    color: var(--accent-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dev-profiles {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dev-profile {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+.centered-text {
+    text-align: center;
+}
+
