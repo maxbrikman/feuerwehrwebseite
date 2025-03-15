@@ -9,6 +9,10 @@
     <script src="js/script.js" defer></script>
 </head>
 <body>
+    <div id="cookie-consent" class="cookie-consent">
+        <p>Diese Webseite verwendet Cookies, um die Benutzererfahrung zu verbessern. Durch die Nutzung dieser Webseite stimmen Sie der Verwendung von Cookies zu. <a href="#">Mehr erfahren</a>.</p>
+        <button id="accept-cookies">Akzeptieren</button>
+    </div>
     <div class="sidebar collapsed">
         <button class="sidebar-toggle" id="sidebar-toggle">&#9776;</button>
         <nav>
@@ -41,26 +45,43 @@
             <h1>Impressum</h1>
         </header>
         <main>
-            <section>
-                <h2>Angaben gemäß § 5 TMG</h2>
-                Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten im Sinne der Datenschutzgesetze ist: <br>
-                <br>
-                    <strong>Maximilian Brikman</strong>
-                    <br>
-                    <ul>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <strong>E-Mail:</strong> Schreiben Sie mir an 
-                        <a href="mailto:maxbrikman@gmail.com">maxbrikman@gmail.com</a>.
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <strong>Telefon:</strong> Sie erreichen mich unter 
-                        <a href="tel:+491738574618">+491738574618</a>.
-                    </li>
-                    </ul>
+            <section class="contact-info-section">
+                <h2 class="section-title">Angaben gemäß § 5 TMG</h2>
+                
+                <div class="legal-info">
+                    <p>Verantwortlich für die Verarbeitung Ihrer personenbezogenen Daten im Sinne der Datenschutzgesetze ist:</p>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <i class="fas fa-user-circle"></i>
+                        <h3>Maximilian Brikman</h3>
+                    </div>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>E-Mail:</strong>
+                                <a href="mailto:maxbrikman@gmail.com">maxbrikman@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <strong>Telefon:</strong>
+                                <a href="tel:+491738574618">+49 173 857 4618</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-
+            
             <section>
                 <h2>Haftungsausschluss</h2>
                 <h3>1. Haftung für Inhalte</h3>

@@ -186,4 +186,19 @@
         const isCollapsed = sidebar.classList.contains('collapsed');
         localStorage.setItem('sidebar', isCollapsed ? 'collapsed' : 'expanded');
     });
+
+    // Cookies
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Überprüfen, ob der Cookie gesetzt ist
+        if (!localStorage.getItem("cookiesAccepted")) {
+            document.getElementById("cookie-consent").style.display = "block"; // Cookie-Abfrage anzeigen
+        }
+        // Event-Listener für den Akzeptieren-Button
+        document.getElementById("accept-cookies").addEventListener("click", function() {
+            localStorage.setItem("cookiesAccepted", "true"); // Cookie setzen
+            document.getElementById("cookie-consent").style.display = "none"; // Cookie-Abfrage ausblenden
+        });
+    });
+
 })();
