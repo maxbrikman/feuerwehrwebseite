@@ -1,0 +1,254 @@
+/* Allgemeines Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    display: flex;
+    height: 100vh; /* Sidebar und Content sollen gleich hoch bleiben */
+    transition: background-color 0.6s, color 0.4s;
+    background-color: #ffffff; /* Lightmode: Weiß */
+    color: #000000; /* Standard-Schriftfarbe */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 330px;
+    background: #f2f2f2; /* Lightmode Hintergrund: Helles Grau */
+    color: #000000; /* Schriftfarbe in der Sidebar */
+    height: 100%; /* Gleiche Höhe wie der Body */
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: width 0.3s ease, background-color 0.3s;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidebar.collapsed {
+    width: 165px; /* Eingeklappte Sidebar */
+}
+
+/* Sidebar Navigation */
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 65px;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #000000; /* Menülink-Schriftfarbe */
+    display: block;
+    padding: 10px 20px;
+    background: #e0e0e0; /* Menüeinträge: Helles Grau */
+    border-radius: 10px;
+    transition: background 0.3s, color 0.3s;
+    width: 252.5px; /* Feste Breite für die Menüeinträge */
+    margin: 0 auto;
+}
+
+/* Menüeinträge ausblenden, wenn Sidebar eingeklappt */
+.sidebar.collapsed nav ul li a {
+    display: none;
+}
+
+.sidebar nav ul li a:hover {
+    background: #d0d0d0; /* Hover-Effekt für Menüeinträge */
+}
+
+/* Hamburger Icon */
+.sidebar-toggle {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    font-size: 40px;
+    background: none;
+    color: #000000; /* Icon-Farbe */
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.3s;
+}
+
+/* Darkmode Toggle */
+.darkmode-toggle {
+    position: absolute;
+    top: 28.5px;
+    left: 230.5px;
+    transition: left 0.3s ease;
+}
+
+/* Verschiebung des Schalters bei eingeklappter Sidebar */
+.sidebar.collapsed ~ .darkmode-toggle {
+    left: 67.5px;
+}
+
+.toggle-container {
+    position: relative;
+    width: 70px;
+    height: 35px;
+    background-color: #ccc;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Darkmode Toggle - Hintergrund im Darkmode */
+body.darkmode .toggle-container {
+    background-color: #555;
+}
+
+.toggle-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    left: 2.25px;
+    top: 2.5px;
+    transition: left 0.3s, background-color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Darkmode Toggle - Kreis im Darkmode */
+body.darkmode .toggle-circle {
+    background-color: #000;
+}
+
+.toggle-circle::before {
+    content: "\f185"; /* Sonne im Lightmode */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 18px;
+    color: #000;
+    transform: translateY(1px); /* Symbol leicht nach unten verschieben */
+}
+
+body.darkmode .toggle-circle::before {
+    content: "\f186"; /* Mond im Darkmode */
+    color: #fff;
+}
+
+.toggle-container.dark .toggle-circle {
+    left: 37.75px;
+}
+
+/* Content */
+.content {
+    flex: 1; /* Passt sich an den verbleibenden Platz an */
+    background-color: #e0e0e0; /* Leicht dunkleres Grau als der Body */
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 4px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: background-color 0.3s;
+}
+
+/* Dark Mode */
+body.darkmode .sidebar {
+    background-color: #2c2c2c; /* Darkmode Sidebar-Hintergrund */
+    color: #f4f4f9;
+}
+
+body.darkmode .sidebar nav ul li a {
+    background-color: #444;
+    color: #f4f4f9;
+}
+
+body.darkmode .sidebar nav ul li a:hover {
+    background-color: #666;
+}
+
+body.darkmode .content {
+    background-color: #3a3a3a; /* Content Hintergrund im Darkmode */
+    color: #f4f4f9;
+}
+
+body.darkmode .sidebar-toggle {
+    color: #f4f4f9;
+}
+
+body.darkmode {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Medien-Container */
+.media-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.media-container img {
+    width: 100%;
+    max-width: 100%; /* Verhindert, dass die Medien breiter als der Container werden */
+    height: auto;
+    max-height: auto;
+    transition: box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+.media-container audio {
+    width: 100%;
+    max-width: 100%; /* Verhindert, dass die Medien breiter als der Container werden */
+    height: auto;
+    max-height: auto;
+    transition: box-shadow 0.3s ease;
+    object-fit: contain;
+}
+
+.media-container video {
+    width: 100%;
+    max-width: 100%; /* Verhindert, dass die Medien breiter als der Container werden */
+    height: auto;
+    max-height: auto;
+    transition: box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+.media-container img {
+    border: 2px solid orange;
+    border-radius: 20px;
+    background: linear-gradient(315deg, red, yellow, #F24E1E, #FF4500, orange, yellow, orange, red, #FFB81C, #FFA500, orange, yellow, red);
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.media-container audio {
+    border: 1px solid yellow;
+    border-radius: 30px;
+    background: linear-gradient(45deg, red, yellow, #F24E1E, #FF4500, #FF4500, orange, red, orange, yellow, #FFB81C, #FFA500, orange, yellow, red);
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.media-container video {
+    border: 2px solid red;
+    border-radius: 20px;
+    background: linear-gradient(45deg, red, yellow, #F24E1E, #FF4500, orange, yellow, orange, red, #FFB81C, #FFA500, orange, yellow, red);
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+body.darkmode .media-container img,
+body.darkmode .media-container audio,
+body.darkmode .media-container video {
+    box-shadow: 0 4px 2px rgba(255, 255, 255, 0.6);
+}
